@@ -21,6 +21,7 @@
 		8FACF8BE2422465300A9AD3B /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FACF8BD2422465300A9AD3B /* ThreeViewController.m */; };
 		8FACF8C124224CCD00A9AD3B /* UIViewController+XTRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FACF8C024224CCD00A9AD3B /* UIViewController+XTRouter.m */; };
 		8FACF8C32422539D00A9AD3B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8FACF8C22422539C00A9AD3B /* README.md */; };
+		8FACF8C5242255BE00A9AD3B /* XTRouter.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8FACF8C4242255BD00A9AD3B /* XTRouter.podspec */; };
 		D3F4B7A6EAFFE119A6B22763 /* Pods_XTRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF883E02792E440693FDB18B /* Pods_XTRouter.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		8FACF8BF24224CCD00A9AD3B /* UIViewController+XTRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XTRouter.h"; sourceTree = "<group>"; };
 		8FACF8C024224CCD00A9AD3B /* UIViewController+XTRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XTRouter.m"; sourceTree = "<group>"; };
 		8FACF8C22422539C00A9AD3B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		8FACF8C4242255BD00A9AD3B /* XTRouter.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = XTRouter.podspec; sourceTree = SOURCE_ROOT; };
 		DF883E02792E440693FDB18B /* Pods_XTRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XTRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D5BE73F22D315D5FA7B09D /* Pods-XTRouter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTRouter.release.xcconfig"; path = "Target Support Files/Pods-XTRouter/Pods-XTRouter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 		8FACF883242238CC00A9AD3B /* XTRouter */ = {
 			isa = PBXGroup;
 			children = (
+				8FACF8C4242255BD00A9AD3B /* XTRouter.podspec */,
 				8FACF8C22422539C00A9AD3B /* README.md */,
 				8FACF884242238CC00A9AD3B /* AppDelegate.h */,
 				8FACF885242238CC00A9AD3B /* AppDelegate.m */,
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FACF894242238D000A9AD3B /* LaunchScreen.storyboard in Resources */,
+				8FACF8C5242255BE00A9AD3B /* XTRouter.podspec in Resources */,
 				8FACF891242238D000A9AD3B /* Assets.xcassets in Resources */,
 				8FACF8C32422539D00A9AD3B /* README.md in Resources */,
 				8FACF88F242238CC00A9AD3B /* Main.storyboard in Resources */,
