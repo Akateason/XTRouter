@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <XTBase/XTBase.h>
+#import <XTFMDB/XTFMDB.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[XTFMDBBase sharedInstance] configureDBWithPath:XT_DOCUMENTS_PATH_TRAIL_(@"db")];
+    
     return YES;
 }
 

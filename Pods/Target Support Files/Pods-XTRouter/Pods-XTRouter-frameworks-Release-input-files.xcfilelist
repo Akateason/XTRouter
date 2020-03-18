@@ -1,0 +1,15 @@
+${PODS_ROOT}/Target Support Files/Pods-XTRouter/Pods-XTRouter-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework
+${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework
+${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
+${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
+${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework
+${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/UIFontWDCustomLoader/UIFontWDCustomLoader.framework
+${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework
+${BUILT_PRODUCTS_DIR}/Valet/Valet.framework
+${BUILT_PRODUCTS_DIR}/XTBase/XTBase.framework
+${BUILT_PRODUCTS_DIR}/XTFMDB/XTFMDB.framework
+${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework

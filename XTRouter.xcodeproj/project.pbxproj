@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,13 @@
 		8FACF891242238D000A9AD3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FACF890242238D000A9AD3B /* Assets.xcassets */; };
 		8FACF894242238D000A9AD3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FACF892242238D000A9AD3B /* LaunchScreen.storyboard */; };
 		8FACF897242238D000A9AD3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FACF896242238D000A9AD3B /* main.m */; };
-		8FACF8A1242238D000A9AD3B /* XTRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FACF8A0242238D000A9AD3B /* XTRouterTests.m */; };
+		8FACF8B22422393A00A9AD3B /* XTRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FACF8B02422393A00A9AD3B /* XTRouter.m */; };
+		8FACF8B62422463600A9AD3B /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FACF8B52422463600A9AD3B /* OneViewController.m */; };
+		8FACF8BA2422464100A9AD3B /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FACF8B82422464100A9AD3B /* TwoViewController.m */; };
+		8FACF8BB2422464100A9AD3B /* TwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FACF8B92422464100A9AD3B /* TwoViewController.xib */; };
+		8FACF8BE2422465300A9AD3B /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FACF8BD2422465300A9AD3B /* ThreeViewController.m */; };
+		8FACF8C124224CCD00A9AD3B /* UIViewController+XTRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FACF8C024224CCD00A9AD3B /* UIViewController+XTRouter.m */; };
+		D3F4B7A6EAFFE119A6B22763 /* Pods_XTRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF883E02792E440693FDB18B /* Pods_XTRouter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34E0AED2DEC6EA8C24D279FE /* Pods-XTRouter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTRouter.debug.xcconfig"; path = "Target Support Files/Pods-XTRouter/Pods-XTRouter.debug.xcconfig"; sourceTree = "<group>"; };
 		8FACF881242238CC00A9AD3B /* XTRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XTRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FACF884242238CC00A9AD3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8FACF885242238CC00A9AD3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -41,8 +48,19 @@
 		8FACF895242238D000A9AD3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FACF896242238D000A9AD3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8FACF89C242238D000A9AD3B /* XTRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XTRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FACF8A0242238D000A9AD3B /* XTRouterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRouterTests.m; sourceTree = "<group>"; };
-		8FACF8A2242238D000A9AD3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FACF8B02422393A00A9AD3B /* XTRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRouter.m; sourceTree = "<group>"; };
+		8FACF8B12422393A00A9AD3B /* XTRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRouter.h; sourceTree = "<group>"; };
+		8FACF8B42422463600A9AD3B /* OneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		8FACF8B52422463600A9AD3B /* OneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
+		8FACF8B72422464100A9AD3B /* TwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
+		8FACF8B82422464100A9AD3B /* TwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		8FACF8B92422464100A9AD3B /* TwoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwoViewController.xib; sourceTree = "<group>"; };
+		8FACF8BC2422465300A9AD3B /* ThreeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeViewController.h; sourceTree = "<group>"; };
+		8FACF8BD2422465300A9AD3B /* ThreeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeViewController.m; sourceTree = "<group>"; };
+		8FACF8BF24224CCD00A9AD3B /* UIViewController+XTRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XTRouter.h"; sourceTree = "<group>"; };
+		8FACF8C024224CCD00A9AD3B /* UIViewController+XTRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XTRouter.m"; sourceTree = "<group>"; };
+		DF883E02792E440693FDB18B /* Pods_XTRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XTRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D5BE73F22D315D5FA7B09D /* Pods-XTRouter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTRouter.release.xcconfig"; path = "Target Support Files/Pods-XTRouter/Pods-XTRouter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3F4B7A6EAFFE119A6B22763 /* Pods_XTRouter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,12 +82,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		202347F5FD42A7F8F4E7C234 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34E0AED2DEC6EA8C24D279FE /* Pods-XTRouter.debug.xcconfig */,
+				E3D5BE73F22D315D5FA7B09D /* Pods-XTRouter.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8F2FA05F6EA294C07DA898B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF883E02792E440693FDB18B /* Pods_XTRouter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8FACF878242238CC00A9AD3B = {
 			isa = PBXGroup;
 			children = (
 				8FACF883242238CC00A9AD3B /* XTRouter */,
-				8FACF89F242238D000A9AD3B /* XTRouterTests */,
 				8FACF882242238CC00A9AD3B /* Products */,
+				202347F5FD42A7F8F4E7C234 /* Pods */,
+				8F2FA05F6EA294C07DA898B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,10 +123,12 @@
 			children = (
 				8FACF884242238CC00A9AD3B /* AppDelegate.h */,
 				8FACF885242238CC00A9AD3B /* AppDelegate.m */,
+				8FACF8AF2422393A00A9AD3B /* XTRouter */,
 				8FACF887242238CC00A9AD3B /* SceneDelegate.h */,
 				8FACF888242238CC00A9AD3B /* SceneDelegate.m */,
 				8FACF88A242238CC00A9AD3B /* ViewController.h */,
 				8FACF88B242238CC00A9AD3B /* ViewController.m */,
+				8FACF8B32422461D00A9AD3B /* TestVCs */,
 				8FACF88D242238CC00A9AD3B /* Main.storyboard */,
 				8FACF890242238D000A9AD3B /* Assets.xcassets */,
 				8FACF892242238D000A9AD3B /* LaunchScreen.storyboard */,
@@ -99,13 +138,29 @@
 			path = XTRouter;
 			sourceTree = "<group>";
 		};
-		8FACF89F242238D000A9AD3B /* XTRouterTests */ = {
+		8FACF8AF2422393A00A9AD3B /* XTRouter */ = {
 			isa = PBXGroup;
 			children = (
-				8FACF8A0242238D000A9AD3B /* XTRouterTests.m */,
-				8FACF8A2242238D000A9AD3B /* Info.plist */,
+				8FACF8B12422393A00A9AD3B /* XTRouter.h */,
+				8FACF8B02422393A00A9AD3B /* XTRouter.m */,
+				8FACF8BF24224CCD00A9AD3B /* UIViewController+XTRouter.h */,
+				8FACF8C024224CCD00A9AD3B /* UIViewController+XTRouter.m */,
 			);
-			path = XTRouterTests;
+			path = XTRouter;
+			sourceTree = "<group>";
+		};
+		8FACF8B32422461D00A9AD3B /* TestVCs */ = {
+			isa = PBXGroup;
+			children = (
+				8FACF8B42422463600A9AD3B /* OneViewController.h */,
+				8FACF8B52422463600A9AD3B /* OneViewController.m */,
+				8FACF8B72422464100A9AD3B /* TwoViewController.h */,
+				8FACF8B82422464100A9AD3B /* TwoViewController.m */,
+				8FACF8B92422464100A9AD3B /* TwoViewController.xib */,
+				8FACF8BC2422465300A9AD3B /* ThreeViewController.h */,
+				8FACF8BD2422465300A9AD3B /* ThreeViewController.m */,
+			);
+			path = TestVCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8FACF8A5242238D000A9AD3B /* Build configuration list for PBXNativeTarget "XTRouter" */;
 			buildPhases = (
+				DB384CB9ABC44A9F1D3DDBBA /* [CP] Check Pods Manifest.lock */,
 				8FACF87D242238CC00A9AD3B /* Sources */,
 				8FACF87E242238CC00A9AD3B /* Frameworks */,
 				8FACF87F242238CC00A9AD3B /* Resources */,
+				16553E875031E2370EA91E7C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,6 +248,7 @@
 				8FACF894242238D000A9AD3B /* LaunchScreen.storyboard in Resources */,
 				8FACF891242238D000A9AD3B /* Assets.xcassets in Resources */,
 				8FACF88F242238CC00A9AD3B /* Main.storyboard in Resources */,
+				8FACF8BB2422464100A9AD3B /* TwoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,15 +261,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16553E875031E2370EA91E7C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XTRouter/Pods-XTRouter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XTRouter/Pods-XTRouter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XTRouter/Pods-XTRouter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB384CB9ABC44A9F1D3DDBBA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XTRouter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8FACF87D242238CC00A9AD3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FACF8C124224CCD00A9AD3B /* UIViewController+XTRouter.m in Sources */,
+				8FACF8BA2422464100A9AD3B /* TwoViewController.m in Sources */,
+				8FACF8B22422393A00A9AD3B /* XTRouter.m in Sources */,
 				8FACF88C242238CC00A9AD3B /* ViewController.m in Sources */,
 				8FACF886242238CC00A9AD3B /* AppDelegate.m in Sources */,
+				8FACF8B62422463600A9AD3B /* OneViewController.m in Sources */,
 				8FACF897242238D000A9AD3B /* main.m in Sources */,
 				8FACF889242238CC00A9AD3B /* SceneDelegate.m in Sources */,
+				8FACF8BE2422465300A9AD3B /* ThreeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +324,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FACF8A1242238D000A9AD3B /* XTRouterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +469,7 @@
 		};
 		8FACF8A6242238D000A9AD3B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34E0AED2DEC6EA8C24D279FE /* Pods-XTRouter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -382,6 +487,7 @@
 		};
 		8FACF8A7242238D000A9AD3B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3D5BE73F22D315D5FA7B09D /* Pods-XTRouter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

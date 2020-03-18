@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "XTRouter.h"
+
 @interface ViewController ()
 
 @end
@@ -16,7 +18,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+        
+    [XTRouter registVCFromClass:@"OneViewController"];
+    [XTRouter registVCFromXib:@"TwoViewController"];
+    [XTRouter registVCFromStoryboard:@"ThreeViewController" storyboardName:@"Main"];
+    
+}
+
+- (IBAction)action1:(id)sender {
+    [XTRouter jumpVC:@"OneViewController"
+               param:@"{'a':'我是现实来的数据'}"
+                 way:(XTRouterSkipWayPush)
+         viewDidLoad:^{
+        
+    }];
+}
+
+- (IBAction)action2:(id)sender {
+    [XTRouter jumpVC:@"TwoViewController"
+               param:nil
+                 way:(XTRouterSkipWayPush)
+         viewDidLoad:^{
+        
+    }];
+}
+
+- (IBAction)action3:(id)sender {
+    [XTRouter jumpVC:@"ThreeViewController"
+               param:nil
+                 way:(XTRouterSkipWayModal)
+         viewDidLoad:^{
+        
+    }];
 }
 
 
