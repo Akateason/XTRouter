@@ -3,6 +3,7 @@
 ## Example
 
 To run the example project, clone the repo, and run directory.
+![pic](https://github.com/Akateason/XTRouter/blob/master/play.gif)
 
 ## Requirements
 
