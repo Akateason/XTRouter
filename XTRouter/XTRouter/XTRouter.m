@@ -20,17 +20,17 @@
 
 @implementation XTRouter
 
-+ (void)registVCFromClass:(NSString *)vcName {
++ (void)registerVCFromClass:(NSString *)vcName {
     XTRouterRec *rec = [[XTRouterRec alloc] initWithVCName:vcName mode:XTRouterLaunchModeFromClass storyName:nil];
     [rec xt_insertOrIgnore];
 }
 
-+ (void)registVCFromXib:(NSString *)vcName {
++ (void)registerVCFromXib:(NSString *)vcName {
     XTRouterRec *rec = [[XTRouterRec alloc] initWithVCName:vcName mode:XTRouterLaunchModeFromXib storyName:nil];
     [rec xt_insertOrIgnore];
 }
 
-+ (void)registVCFromStoryboard:(NSString *)vcName
++ (void)registerVCFromStoryboard:(NSString *)vcName
                 storyboardName:(NSString *)storyboardName {
     XTRouterRec *rec = [[XTRouterRec alloc] initWithVCName:vcName mode:XTRouterLaunchModeFromStoryboard storyName:storyboardName];
     [rec xt_insertOrIgnore];

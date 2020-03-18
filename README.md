@@ -40,6 +40,14 @@ base on[ XTFMDB](https://github.com/Akateason/XTFMDB) . you should config a DB w
 }];
 ```
 
+### Get the param
+```
+ id jsonStr = self.xt_param_jsonStr ;  // get JsonStr
+ Model *m = [Model yy_modelWithJson:json];  // jsonStr to Model
+...
+```
+
+[中文说明](https://www.jianshu.com/p/195949eb91d4)
 
 ## Author
 

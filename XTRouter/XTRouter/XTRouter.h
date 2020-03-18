@@ -25,14 +25,14 @@ typedef NS_ENUM(NSUInteger, XTRouterSkipWay) {
 
 @interface XTRouter : NSObject
 /// Register from class
-+ (void)registVCFromClass:(NSString *)vcName;
++ (void)registerVCFromClass:(NSString *)vcName;
 /// Register from Xib. (xibname == className)
-+ (void)registVCFromXib:(NSString *)vcName;
++ (void)registerVCFromXib:(NSString *)vcName;
 /// Register from Storyboard
 /// @param vcName               vc ClassName
 /// @param storyboardName       name of storyboard   e.g. @"Main"
-+ (void)registVCFromStoryboard:(NSString *)vcName
-                storyboardName:(NSString *)storyboardName;
++ (void)registerVCFromStoryboard:(NSString *)vcName
+                  storyboardName:(NSString *)storyboardName;
 
 
 /// Jump to VC ~!

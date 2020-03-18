@@ -20,9 +20,9 @@
     [super viewDidLoad];
     
         
-    [XTRouter registVCFromClass:@"OneViewController"];
-    [XTRouter registVCFromXib:@"TwoViewController"];
-    [XTRouter registVCFromStoryboard:@"ThreeViewController" storyboardName:@"Main"];
+    [XTRouter registerVCFromClass:@"OneViewController"];
+    [XTRouter registerVCFromXib:@"TwoViewController"];
+    [XTRouter registerVCFromStoryboard:@"ThreeViewController" storyboardName:@"Main"];
     
 }
 
