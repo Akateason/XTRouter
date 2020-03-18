@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'XTRouter'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'a Powerful iOS Router'
   s.description      = '一个灵活的路由组件, 可以通过与web端协作跳转. 任意启动, 任意跳转,任意传参, 回调等.'
 
