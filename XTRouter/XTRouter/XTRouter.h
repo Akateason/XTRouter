@@ -45,6 +45,12 @@ typedef NS_ENUM(NSUInteger, XTRouterSkipWay) {
            way:(XTRouterSkipWay)way
    viewDidLoad:(void(^_Nullable)(void))viewDidLoadCallback ;
 
+
+/// Jump Back to VC~~
+/// @param vcKey                VC class Name .
+/// @return success or failed
+- (BOOL)backTo:(NSString *)vcKey ;
+
 @end
 
 
@@ -58,9 +64,11 @@ typedef NS_ENUM(NSUInteger, XTRouterSkipWay) {
 
 
 @interface XTRouterRec : NSObject
-
+//VCName
 @property (copy, nonatomic) NSString            *name;
-@property (nonatomic)       int                 launchMode;  //XTRouterLaunchMode
+//XTRouterLaunchMode
+@property (nonatomic)       int                 launchMode;
+//Storyboard Name if needed
 @property (copy, nonatomic) NSString            *storyboardName;
 
 - (instancetype)initWithVCName:(NSString *)name

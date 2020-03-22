@@ -80,6 +80,26 @@
     }
 }
 
+
+- (BOOL)backTo:(NSString *)vcKey {
+    XTRouterRec *rec = [XTRouterRec xt_findFirstWhere:XT_STR_FORMAT(@"name == '%@'",vcKey)];
+    UINavigationController *currentNavVC = [UIViewController xt_topViewController].navigationController;
+    if (currentNavVC) {
+        for (UIViewController *aVC in currentNavVC.viewControllers) {
+            if ([aVC.className isEqualToString:rec.name]) {
+                [currentNavVC popToViewController:aVC animated:YES];
+                NSLog(@"backTo (%@) VC Success",vcKey);
+                return YES;
+            }
+        }
+        NSLog(@"backTo VC Faild: Wrong VC Key (%@)",vcKey);
+        return NO;
+    } else {
+        NSLog(@"backTo VC Faild: rootVC is not a UINavigationController !");
+        return NO;
+    }
+}
+
 @end
 
 
