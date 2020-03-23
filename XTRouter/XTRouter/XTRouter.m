@@ -62,7 +62,7 @@
     XTRouterRec *rec = [XTRouterRec xt_findFirstWhere:XT_STR_FORMAT(@"key == '%@'",mappedKey)];
     
     UIViewController *vc = nil;
-    Class cls = NSClassFromString(rec.key);
+    Class cls = NSClassFromString(rec.vcName);
     
     switch (rec.launchMode) {
         case XTRouterLaunchModeFromClass: {
@@ -77,7 +77,7 @@
             break;
         case XTRouterLaunchModeFromStoryboard: {
             SEL func = NSSelectorFromString(@"getCtrllerFromStory:controllerIdentifier:");
-            vc = ((id (*)(id, SEL, id, id))objc_msgSend)(cls, func, rec.storyboardName, rec.key);
+            vc = ((id (*)(id, SEL, id, id))objc_msgSend)(cls, func, rec.storyboardName, rec.vcName);
         }
             break;
         default:
@@ -105,7 +105,7 @@
     UINavigationController *currentNavVC = [UIViewController xt_topViewController].navigationController;
     if (currentNavVC) {
         for (UIViewController *aVC in currentNavVC.viewControllers) {
-            if ([aVC.className isEqualToString:rec.key]) {
+            if ([aVC.className isEqualToString:rec.vcName]) {
                 [currentNavVC popToViewController:aVC animated:YES];
                 NSLog(@"backTo (%@) VC Success",mappedKey);
                 return YES;
