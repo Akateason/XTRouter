@@ -27,13 +27,13 @@ typedef NS_ENUM(NSUInteger, XTRouterSkipWay) {
 #pragma mark - register
 /// Register from class
 + (void)registerVCFromClass:(NSString *)vcName
-                     mapped:(NSString *)mappedKey;
+                     mapped:(NSString *_Nullable)mappedKey;
 + (void)registerVCFromClass:(NSString *)vcName;
 
 
 /// Register from Xib. (xibname == className)
 + (void)registerVCFromXib:(NSString *)vcName
-                   mapped:(NSString *)mappedKey;
+                   mapped:(NSString *_Nullable)mappedKey;
 + (void)registerVCFromXib:(NSString *)vcName;
 
 
@@ -42,7 +42,7 @@ typedef NS_ENUM(NSUInteger, XTRouterSkipWay) {
 /// @param storyboardName       name of storyboard   e.g. @"Main"
 + (void)registerVCFromStoryboard:(NSString *)vcName
                   storyboardName:(NSString *)storyboardName
-                          mapped:(NSString *)mappedKey;
+                          mapped:(NSString *_Nullable)mappedKey;
 + (void)registerVCFromStoryboard:(NSString *)vcName
                   storyboardName:(NSString *)storyboardName;
 

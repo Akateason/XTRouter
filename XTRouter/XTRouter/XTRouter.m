@@ -59,7 +59,7 @@
            way:(XTRouterSkipWay)way
    viewDidLoad:(void(^)(void))viewDidLoadCallback {
         
-    XTRouterRec *rec = [XTRouterRec xt_findFirstWhere:XT_STR_FORMAT(@"name == '%@'",mappedKey)];
+    XTRouterRec *rec = [XTRouterRec xt_findFirstWhere:XT_STR_FORMAT(@"key == '%@'",mappedKey)];
     
     UIViewController *vc = nil;
     Class cls = NSClassFromString(rec.key);
@@ -86,8 +86,9 @@
         
     vc.xt_param_jsonStr = jsonString;
     
-    [[vc rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(RACTuple * _Nullable x) {
-        NSLog(@"🦌🏊‍♀️ %@ : DidLoad ", [rec yy_modelToJSONString]);
+    [[[vc rac_signalForSelector:@selector(viewDidLoad)] takeUntil:vc.rac_willDeallocSignal]
+     subscribeNext:^(RACTuple * _Nullable x) {
+        NSLog(@"🦌🏊‍♀️ %@ : DidLoad ",  [rec yy_modelToJSONString]);
         if (viewDidLoadCallback) viewDidLoadCallback();
     }];
         
@@ -100,7 +101,7 @@
 
 
 - (BOOL)backTo:(NSString *)mappedKey {
-    XTRouterRec *rec = [XTRouterRec xt_findFirstWhere:XT_STR_FORMAT(@"name == '%@'",mappedKey)];
+    XTRouterRec *rec = [XTRouterRec xt_findFirstWhere:XT_STR_FORMAT(@"key == '%@'",mappedKey)];
     UINavigationController *currentNavVC = [UIViewController xt_topViewController].navigationController;
     if (currentNavVC) {
         for (UIViewController *aVC in currentNavVC.viewControllers) {

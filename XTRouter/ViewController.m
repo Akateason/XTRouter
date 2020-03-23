@@ -20,14 +20,14 @@
     [super viewDidLoad];
     
         
-    [XTRouter registerVCFromClass:@"OneViewController"];
-    [XTRouter registerVCFromXib:@"TwoViewController"];
-    [XTRouter registerVCFromStoryboard:@"ThreeViewController" storyboardName:@"Main"];
+    [XTRouter registerVCFromClass:@"OneViewController" mapped:@"one"];
+    [XTRouter registerVCFromXib:@"TwoViewController" mapped:@"two"];
+    [XTRouter registerVCFromStoryboard:@"ThreeViewController" storyboardName:@"Main" mapped:@"three"];
     
 }
 
 - (IBAction)action1:(id)sender {
-    [XTRouter jumpVC:@"OneViewController"
+    [XTRouter jumpVC:@"one"
                param:@"{'a':'我是现实来的数据'}"
                  way:(XTRouterSkipWayPush)
          viewDidLoad:^{
@@ -36,7 +36,7 @@
 }
 
 - (IBAction)action2:(id)sender {
-    [XTRouter jumpVC:@"TwoViewController"
+    [XTRouter jumpVC:@"two"
                param:nil
                  way:(XTRouterSkipWayPush)
          viewDidLoad:^{
@@ -45,7 +45,7 @@
 }
 
 - (IBAction)action3:(id)sender {
-    [XTRouter jumpVC:@"ThreeViewController"
+    [XTRouter jumpVC:@"three"
                param:nil
                  way:(XTRouterSkipWayModal)
          viewDidLoad:^{
