@@ -20,31 +20,49 @@
 
 @implementation XTRouter
 
++ (void)registerVCFromClass:(NSString *)vcName
+                     mapped:(NSString *)mappedKey {
+    XTRouterRec *rec = [[XTRouterRec alloc] initWithVCName:vcName key:mappedKey mode:XTRouterLaunchModeFromClass storyName:nil];
+    [rec xt_insertOrIgnore];
+}
+
 + (void)registerVCFromClass:(NSString *)vcName {
-    XTRouterRec *rec = [[XTRouterRec alloc] initWithVCName:vcName mode:XTRouterLaunchModeFromClass storyName:nil];
+    [self registerVCFromClass:vcName mapped:nil];
+}
+
++ (void)registerVCFromXib:(NSString *)vcName
+                   mapped:(NSString *)mappedKey {
+    XTRouterRec *rec = [[XTRouterRec alloc] initWithVCName:vcName key:mappedKey mode:XTRouterLaunchModeFromXib storyName:nil];
     [rec xt_insertOrIgnore];
 }
 
 + (void)registerVCFromXib:(NSString *)vcName {
-    XTRouterRec *rec = [[XTRouterRec alloc] initWithVCName:vcName mode:XTRouterLaunchModeFromXib storyName:nil];
+    [self registerVCFromXib:vcName mapped:nil];
+}
+
++ (void)registerVCFromStoryboard:(NSString *)vcName
+                  storyboardName:(NSString *)storyboardName
+                          mapped:(NSString *)mappedKey {
+    XTRouterRec *rec = [[XTRouterRec alloc] initWithVCName:vcName key:mappedKey mode:XTRouterLaunchModeFromStoryboard storyName:storyboardName];
     [rec xt_insertOrIgnore];
 }
 
 + (void)registerVCFromStoryboard:(NSString *)vcName
                 storyboardName:(NSString *)storyboardName {
-    XTRouterRec *rec = [[XTRouterRec alloc] initWithVCName:vcName mode:XTRouterLaunchModeFromStoryboard storyName:storyboardName];
-    [rec xt_insertOrIgnore];
+    [self registerVCFromStoryboard:vcName storyboardName:storyboardName mapped:nil];
 }
 
-+ (void)jumpVC:(NSString *)vcKey
+
+
++ (void)jumpVC:(NSString *)mappedKey
          param:(NSString *)jsonString
            way:(XTRouterSkipWay)way
    viewDidLoad:(void(^)(void))viewDidLoadCallback {
         
-    XTRouterRec *rec = [XTRouterRec xt_findFirstWhere:XT_STR_FORMAT(@"name == '%@'",vcKey)];
+    XTRouterRec *rec = [XTRouterRec xt_findFirstWhere:XT_STR_FORMAT(@"name == '%@'",mappedKey)];
     
     UIViewController *vc = nil;
-    Class cls = NSClassFromString(rec.name);
+    Class cls = NSClassFromString(rec.key);
     
     switch (rec.launchMode) {
         case XTRouterLaunchModeFromClass: {
@@ -59,7 +77,7 @@
             break;
         case XTRouterLaunchModeFromStoryboard: {
             SEL func = NSSelectorFromString(@"getCtrllerFromStory:controllerIdentifier:");
-            vc = ((id (*)(id, SEL, id, id))objc_msgSend)(cls, func, rec.storyboardName, rec.name);
+            vc = ((id (*)(id, SEL, id, id))objc_msgSend)(cls, func, rec.storyboardName, rec.key);
         }
             break;
         default:
@@ -81,18 +99,18 @@
 }
 
 
-- (BOOL)backTo:(NSString *)vcKey {
-    XTRouterRec *rec = [XTRouterRec xt_findFirstWhere:XT_STR_FORMAT(@"name == '%@'",vcKey)];
+- (BOOL)backTo:(NSString *)mappedKey {
+    XTRouterRec *rec = [XTRouterRec xt_findFirstWhere:XT_STR_FORMAT(@"name == '%@'",mappedKey)];
     UINavigationController *currentNavVC = [UIViewController xt_topViewController].navigationController;
     if (currentNavVC) {
         for (UIViewController *aVC in currentNavVC.viewControllers) {
-            if ([aVC.className isEqualToString:rec.name]) {
+            if ([aVC.className isEqualToString:rec.key]) {
                 [currentNavVC popToViewController:aVC animated:YES];
-                NSLog(@"backTo (%@) VC Success",vcKey);
+                NSLog(@"backTo (%@) VC Success",mappedKey);
                 return YES;
             }
         }
-        NSLog(@"backTo VC Faild: Wrong VC Key (%@)",vcKey);
+        NSLog(@"backTo VC Faild: Wrong VC Key (%@)",mappedKey);
         return NO;
     } else {
         NSLog(@"backTo VC Faild: rootVC is not a UINavigationController !");
@@ -115,12 +133,13 @@
 @implementation XTRouterRec
 
 - (instancetype)initWithVCName:(NSString *)name
+                           key:(NSString *)key
                           mode:(XTRouterLaunchMode)mode
-                     storyName:(NSString *)storyName
-{
+                     storyName:(NSString *_Nullable)storyName {
     self = [super init];
     if (self) {
-        _name = name;
+        _vcName = name;
+        _key = key ?: name;
         _launchMode = (int)mode;
         _storyboardName = storyName?:@"Main";
     }
