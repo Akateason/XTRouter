@@ -88,7 +88,7 @@
     
     [[[vc rac_signalForSelector:@selector(viewDidLoad)] takeUntil:vc.rac_willDeallocSignal]
      subscribeNext:^(RACTuple * _Nullable x) {
-        NSLog(@"🦌🏊‍♀️ %@ : DidLoad ",  [rec yy_modelToJSONString]);
+        NSLog(@"🦌🏊‍♀️ (%@) %@ : DidLoad ", rec.key,rec.vcName);
         if (viewDidLoadCallback) viewDidLoadCallback();
     }];
         
